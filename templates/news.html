@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}DAV Gyanodaya Vidya Mandir | News & Announcements{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden bg-mesh min-h-screen pt-24 pb-16">
+  <!-- Ambient background glow blobs -->
+  <div class="absolute top-10 left-[-10%] w-[500px] h-[500px] rounded-full glow-blob-blue animate-float pointer-events-none opacity-40"></div>
+  <div class="absolute bottom-10 right-[-10%] w-[500px] h-[500px] rounded-full glow-blob-purple animate-float-delayed pointer-events-none opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Hero Header -->
+    <header class="max-w-3xl mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-purple/10 border border-accent-purple/20 text-accent-purple font-bold text-xs uppercase tracking-wider">
+        Updates & Board Circulars
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black text-foreground">
+        News & <span class="bg-gradient-to-r from-accent-purple to-primary bg-clip-text text-transparent">Announcements</span>
+      </h1>
+      <p class="text-lg text-muted leading-relaxed">
+        Stay updated with the latest scholastic accomplishments, board notices, holiday schedules, and cultural highlights at DAV Gyanodaya Vidya Mandir.
+      </p>
+    </header>
+
+    <!-- News Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for item in [
+        {
+          "title": "Class X CBSE Board Toppers 2024-25",
+          "desc": "Outstanding scholastic achievement by our senior students in CBSE Board Examinations. Nandini Shridhar led the class with a brilliant 98.6% cumulative score, followed by Naman Upadhyay with 96.8%. Multiple students achieved 100/100 perfect scores in Mathematics and Science!",
+          "date": "Sep 12, 2024",
+          "category": "Academic Excellence",
+          "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+          "badge_color": "bg-green-500/15 text-green-500 border-green-500/25"
+        },
+        {
+          "title": "Jal Pakhwada 2026 Celebration",
+          "desc": "Under the directions of the CBSE board and Ministry of Jal Shakti, our school celebrated 'Jal Pakhwada'. Students from middle and senior sec participated actively in water conservation awareness rallies, creative poster designs, and oath ceremonies to build ecological awareness.",
+          "date": "Sep 08, 2024",
+          "category": "Campus Event",
+          "image": "https://images.unsplash.com/photo-1541339907198-e08759df9a73?auto=format&fit=crop&q=80&w=800",
+          "badge_color": "bg-primary/15 text-primary border-primary/25"
+        },
+        {
+          "title": "National Youth Day & Sports Week",
+          "desc": "In honor of Swami Vivekananda's birth anniversary, DAV GVM Narsingarh launched its annual inter-house sports meet. The week featured intensive competitions in cricket, volleyball, badminton, along with specialized group yoga assemblies demonstrating physical wellness.",
+          "date": "Sep 05, 2024",
+          "category": "Cultural & Sports",
+          "image": "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800",
+          "badge_color": "bg-accent-purple/15 text-accent-purple border-accent-purple/25"
+        }
+      ] %}
+      <div class="theme-card rounded-[2.5rem] overflow-hidden bg-surface border border-border p-3 flex flex-col justify-between h-full group">
+        <div>
+          <!-- Thumbnail aspect -->
+          <div class="w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 relative">
+            <img src="{{ item.image }}" alt="{{ item.title }}" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border {{ item.badge_color }} backdrop-blur-sm">
+              {{ item.category }}
+            </span>
+          </div>
+
+          <div class="px-3">
+            <div class="flex items-center gap-1.5 text-xs text-muted mb-2 font-medium">
+              <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"></path>
+              </svg>
+              {{ item.date }}
+            </div>
+            
+            <h3 class="font-extrabold text-xl mb-3 text-foreground transition-colors group-hover:text-primary leading-snug">{{ item.title }}</h3>
+            <p class="text-sm text-muted leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-500">{{ item.desc }}</p>
+          </div>
+        </div>
+
+        <div class="px-3 pt-6 pb-2">
+          <button class="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-dark transition-colors duration-300">
+            Full Announcement
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </main>
+  </div>
+</div>
+{% endblock %}

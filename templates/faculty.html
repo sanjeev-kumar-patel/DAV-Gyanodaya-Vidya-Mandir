@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}DAV Gyanodaya Vidya Mandir | Our Teaching Faculty{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden bg-mesh min-h-screen pt-24 pb-16">
+  <!-- Ambient floating blobs for visual richness -->
+  <div class="absolute top-10 left-[-10%] w-[500px] h-[500px] rounded-full glow-blob-blue animate-float pointer-events-none opacity-40"></div>
+  <div class="absolute bottom-10 right-[-10%] w-[500px] h-[500px] rounded-full glow-blob-purple animate-float-delayed pointer-events-none opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Hero Header -->
+    <header class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider">
+        Our Leadership & Teaching Faculty
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black text-foreground">
+        Our Expert <span class="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">Educators</span>
+      </h1>
+      <p class="text-lg text-muted leading-relaxed">
+        Meet the dedicated team of academic leaders and subject-matter experts committed to blending high-caliber modern curriculum with core moral principles at DAV Gyanodaya Vidya Mandir.
+      </p>
+    </header>
+
+    <!-- Faculty Categories -->
+    <div class="space-y-24">
+      
+      <!-- Leadership Desk Card -->
+      <section class="max-w-4xl mx-auto">
+        <div class="glass-card rounded-[2.5rem] border border-white/10 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center shadow-xl">
+          <div class="w-32 h-32 md:w-44 md:h-44 rounded-[2.5rem] bg-gradient-to-tr from-primary to-accent-purple flex items-center justify-center text-white shrink-0 shadow-lg">
+            <svg class="w-16 h-16 md:w-24 md:h-24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+            </svg>
+          </div>
+          <div class="space-y-4 text-center md:text-left flex-1">
+            <span class="text-xs font-bold bg-accent-cyan/20 text-accent-cyan border border-accent-cyan/20 px-3 py-1 rounded-full uppercase tracking-wider">Principal's Desk</span>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-foreground">Mr. R. P. Kurmwanshi</h3>
+            <p class="text-sm text-muted leading-relaxed">
+              Guiding our school under the ideals of Mahatma Hansraj and Swami Dayanand, bringing over two decades of transformative leadership to nurture ethical, globally competent future leaders.
+            </p>
+            <div class="pt-2">
+              <a href="/principal" class="btn-primary py-2 px-5 text-xs rounded-xl shadow-none">Read Message</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category 1: PGT -->
+      <section class="space-y-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-foreground flex items-center gap-3">
+          <span class="w-1.5 h-8 bg-primary rounded-full"></span>
+          Post Graduate Teachers (PGT)
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {% for teacher in [
+            {"name": "Anita Ahuja", "subject": "Social Science"},
+            {"name": "Manish Dixit", "subject": "Commerce / IT"},
+            {"name": "Sanjay Khare", "subject": "Languages"},
+            {"name": "Parag K. Shrivastava", "subject": "Science / Biology"},
+            {"name": "Vagish Pandey", "subject": "Mathematics"},
+            {"name": "Vasundhara Raje Singh Baghel", "subject": "Humanities"},
+            {"name": "Mahesh Kumar Soni", "subject": "Physics"}
+          ] %}
+          <div class="theme-card rounded-3xl p-6 text-center flex flex-col justify-between h-full bg-surface border border-border">
+            <div>
+              <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c4 0 7-3 7-7s-3-7-7-7-7 3-7 7 3 7 7 7zm0 2c-5 0-9 4-9 9h18c0-5-4-9-9-9z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-md text-foreground mb-1">{{ teacher.name }}</h3>
+              <p class="text-xs text-muted font-medium mb-4">{{ teacher.subject }}</p>
+            </div>
+            <span class="inline-block text-[9px] font-bold border border-border px-2.5 py-0.5 rounded-full text-muted uppercase tracking-wider self-center">DAV Certified</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Category 2: TGT -->
+      <section class="space-y-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-foreground flex items-center gap-3">
+          <span class="w-1.5 h-8 bg-accent-purple rounded-full"></span>
+          Trained Graduate Teachers (TGT)
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {% for teacher in [
+            {"name": "Ishwar Patel", "subject": "Mathematics"},
+            {"name": "Nitin Pasreeja", "subject": "Science / Chemistry"},
+            {"name": "Shubham Banafar", "subject": "Languages / English"},
+            {"name": "Pradeep Kumar Singh", "subject": "Social Science"},
+            {"name": "Sudheer Kumar Sharma", "subject": "Hindi / Sanskrit"}
+          ] %}
+          <div class="theme-card rounded-3xl p-6 text-center flex flex-col justify-between h-full bg-surface border border-border">
+            <div>
+              <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 flex items-center justify-center mx-auto mb-4 text-accent-purple">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c4 0 7-3 7-7s-3-7-7-7-7 3-7 7 3 7 7 7zm0 2c-5 0-9 4-9 9h18c0-5-4-9-9-9z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-md text-foreground mb-1">{{ teacher.name }}</h3>
+              <p class="text-xs text-muted font-medium mb-4">{{ teacher.subject }}</p>
+            </div>
+            <span class="inline-block text-[9px] font-bold border border-border px-2.5 py-0.5 rounded-full text-muted uppercase tracking-wider self-center">DAV Certified</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Category 3: PRT -->
+      <section class="space-y-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-foreground flex items-center gap-3">
+          <span class="w-1.5 h-8 bg-accent-cyan rounded-full"></span>
+          Primary Teachers (PRT)
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {% for teacher in [
+            {"name": "Jyoti", "subject": "Primary Classes"},
+            {"name": "Vandana Gautam", "subject": "Primary Classes"},
+            {"name": "Jageshwar Prasad Sahu", "subject": "Primary Classes"},
+            {"name": "Pradip Kumar Ojha", "subject": "Primary Classes"},
+            {"name": "Shailesh Kumar Pandey", "subject": "Primary Classes"},
+            {"name": "Beena Bhutani", "subject": "Primary Classes"},
+            {"name": "Priyanka Barde", "subject": "Primary Classes"},
+            {"name": "Arti Tandon", "subject": "Primary Classes"}
+          ] %}
+          <div class="theme-card rounded-3xl p-6 text-center flex flex-col justify-between h-full bg-surface border border-border">
+            <div>
+              <div class="w-16 h-16 rounded-2xl bg-accent-cyan/10 flex items-center justify-center mx-auto mb-4 text-accent-cyan">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c4 0 7-3 7-7s-3-7-7-7-7 3-7 7 3 7 7 7zm0 2c-5 0-9 4-9 9h18c0-5-4-9-9-9z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-md text-foreground mb-1">{{ teacher.name }}</h3>
+              <p class="text-xs text-muted font-medium mb-4">{{ teacher.subject }}</p>
+            </div>
+            <span class="inline-block text-[9px] font-bold border border-border px-2.5 py-0.5 rounded-full text-muted uppercase tracking-wider self-center">DAV Certified</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Category 4: Nursery & Special Staff -->
+      <section class="space-y-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-foreground flex items-center gap-3">
+          <span class="w-1.5 h-8 bg-primary rounded-full"></span>
+          Nursery & Specialized Staff
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {% for teacher in [
+            {"name": "Archana Gupta", "subject": "Nursery Educator"},
+            {"name": "Himakshi Saraf", "subject": "Nursery Educator"},
+            {"name": "Jaipal Singh", "subject": "Librarian & Curator"},
+            {"name": "Mohit Pandey", "subject": "Physical Education (PET)"},
+            {"name": "Debyendu Debsikdar", "subject": "Physical Education (PET)"},
+            {"name": "Ruchi Singh Solankey", "subject": "Scientific Lab Assistant"}
+          ] %}
+          <div class="theme-card rounded-3xl p-6 text-center flex flex-col justify-between h-full bg-surface border border-border">
+            <div>
+              <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.168.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-md text-foreground mb-1">{{ teacher.name }}</h3>
+              <p class="text-xs text-muted font-medium mb-4">{{ teacher.subject }}</p>
+            </div>
+            <span class="inline-block text-[9px] font-bold border border-border px-2.5 py-0.5 rounded-full text-muted uppercase tracking-wider self-center">Specialist</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

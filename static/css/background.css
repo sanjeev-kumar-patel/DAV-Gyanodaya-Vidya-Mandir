@@ -1,0 +1,17 @@
+/* ─── 3D Education-Themed Background Styles ─── */
+#three-edu-background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -40;
+  pointer-events: none;
+  opacity: 0.45;
+  transition: opacity 1s ease;
+}
+
+/* Ensure background canvas stays behind the content layers */
+body {
+  position: relative;
+}

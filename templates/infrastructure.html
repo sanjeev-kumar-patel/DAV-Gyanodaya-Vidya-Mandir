@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}DAV Gyanodaya Vidya Mandir | Campus Infrastructure{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden bg-mesh min-h-screen pt-24 pb-16">
+  <!-- Ambient background glow blobs -->
+  <div class="absolute top-10 left-[-10%] w-[500px] h-[500px] rounded-full glow-blob-blue animate-float pointer-events-none opacity-40"></div>
+  <div class="absolute bottom-10 right-[-10%] w-[500px] h-[500px] rounded-full glow-blob-purple animate-float-delayed pointer-events-none opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Hero Header -->
+    <header class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider">
+        World-Class Facilities
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black text-foreground">
+        Our Premium <span class="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">Infrastructure</span>
+      </h1>
+      <p class="text-lg text-muted leading-relaxed">
+        Situated in the peaceful, green surroundings of HCIL Staff Colony in Narsingarh (Damoh), our state-of-the-art campus blends advanced technological tools with standard sports and library complexes.
+      </p>
+    </header>
+
+    <!-- Core Facilities Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+      {% for item in [
+        {
+          "title": "Science Laboratories",
+          "desc": "Fully independent and high-standard practical labs for Physics, Chemistry, and Biology, allowing students to conduct experiments and research project models.",
+          "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
+          "tag": "Practical Research",
+          "color": "primary"
+        },
+        {
+          "title": "Smart IT Computer Lab",
+          "desc": "Modern high-speed computing terminals equipped with programming software, artificial intelligence packages, and safe internet filtering for standard IT education.",
+          "image": "https://images.unsplash.com/photo-1547480053-7d174f67b557?auto=format&fit=crop&q=80&w=800",
+          "tag": "Digital Literacy",
+          "color": "accent-cyan"
+        },
+        {
+          "title": "Smart Classrooms",
+          "desc": "Spacious tech-enabled classrooms featuring digital interactive whiteboard panels, standard sound systems, and ergonomic arrangements to elevate active learning.",
+          "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=800",
+          "tag": "Modern Pedagogics",
+          "color": "accent-purple"
+        }
+      ] %}
+      <div class="theme-card rounded-[2.5rem] overflow-hidden bg-surface border border-border p-3 flex flex-col justify-between h-full group">
+        <div>
+          <!-- Image aspect -->
+          <div class="w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 relative">
+            <img src="{{ item.image }}" alt="{{ item.title }}" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider bg-black/40 text-white backdrop-blur-sm border border-white/10">
+              {{ item.tag }}
+            </span>
+          </div>
+          <div class="px-3">
+            <h3 class="font-extrabold text-xl mb-2 text-foreground transition-colors group-hover:text-primary">{{ item.title }}</h3>
+            <p class="text-sm text-muted leading-relaxed">{{ item.desc }}</p>
+          </div>
+        </div>
+        <div class="px-3 pt-6 pb-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:translate-x-1.5 transition-transform duration-300">
+            Explore Lab
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Secondary Facilities Section (Beyond Classrooms) -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h2 class="text-3xl md:text-5xl font-black text-foreground">Beyond the Classroom</h2>
+        <p class="text-md text-muted leading-relaxed">
+          Nurturing holistic development requires standard infrastructure extending beyond books. Our campus provides spacious complexes to facilitate physical fitness and literary exploration.
+        </p>
+
+        <div class="space-y-6">
+          <!-- Item 1 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-surface/50 backdrop-blur-sm border border-border hover:border-primary/20 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-foreground text-md mb-1">Rich Literature Library</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Stocked with thousands of textbooks, references, CBSE publications, science journals, and historical literature.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-surface/50 backdrop-blur-sm border border-border hover:border-primary/20 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-foreground text-md mb-1">Sports & Athletics Complexes</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Spacious playground courts for cricket, volleyball, badminton, along with dedicated lawns for physical yoga drills.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="flex gap-4 p-5 rounded-2xl bg-surface/50 backdrop-blur-sm border border-border hover:border-primary/20 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-foreground text-md mb-1">Colony Location & Security</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Located safely in the secure, eco-friendly HCIL Staff Colony, guaranteeing a quiet environment free from industrial hazards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campus Image Box with neon border -->
+      <div class="relative">
+        <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-40 animate-pulse pointer-events-none"></div>
+        <div class="relative aspect-[4/3] rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a73?auto=format&fit=crop&q=80&w=1200" alt="Beautiful DAV Campus View" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{
+  "intents": [
+    {
+      "keywords": ["hello", "hi", "hey", "greetings", "namaste"],
+      "reply": "Namaste! Welcome to the DAV Gyanodaya Vidya Mandir Virtual Counselor. How can I help you today? You can ask about admissions, fee structures, school timings, available streams, infrastructure, or CBSE affiliation!"
+    },
+    {
+      "keywords": ["bye", "goodbye", "exit", "quit", "see you"],
+      "reply": "Thank you for reaching out to DAV Gyanodaya Vidya Mandir, Narsingarh. Have a wonderful day ahead! Rooted in Vedic Values, Flying towards Modern Horizons."
+    },
+    {
+      "keywords": ["thank", "thanks", "helpful", "awesome", "great"],
+      "reply": "You're very welcome! I'm here to support you. Let me know if you have any other questions about DAV GVM."
+    },
+    {
+      "keywords": ["admission", "apply", "registration", "enroll", "intake"],
+      "reply": "Admissions for the 2025-26 academic year are currently open! Here are the details:\n1. Registration forms are available at the school office counter from 09:00 AM to 01:00 PM on all working days.\n2. Registration Fee: INR 500.\n3. Documents Required: Birth Certificate (for Nursery/KG), Transfer Certificate & Report Card from the previous school (for Class I and above), Aadhar Card, and 4 passport-size photographs.\n4. Age Criteria: Child must be 3+ years old for Nursery as of April 1st of the academic year."
+    },
+    {
+      "keywords": ["fee", "fees", "cost", "price", "tuition", "charge"],
+      "reply": "Our fee structure is transparent and conforms strictly to CBSE and DAVCMC (New Delhi) regulatory norms. General fee breakdown:\n- Nursery to KG II: Tuition Fee INR 1,200 per month.\n- Class I to V: Tuition Fee INR 1,500 per month.\n- Class VI to VIII: Tuition Fee INR 1,800 per month.\n- Class IX & X: Tuition Fee INR 2,200 per month.\n- Class XI & XII (Science): Tuition Fee INR 2,800 per month (includes Lab Charges).\n- Class XI & XII (Commerce): Tuition Fee INR 2,500 per month.\nFees can be paid monthly or quarterly by cash at the counter or via online net banking."
+    },
+    {
+      "keywords": ["timing", "timings", "hours", "schedule", "time", "clock"],
+      "reply": "School Timings are organized as follows:\n- Nursery & KG Sections: 08:30 AM to 12:30 PM (Monday to Friday)\n- Class I to Class XII: 08:00 AM to 02:00 PM (Monday to Saturday)\n- Office & Administration Timings: 08:00 AM to 03:00 PM (Monday to Saturday)\nNote: Second Saturdays are usually holidays for primary sections."
+    },
+    {
+      "keywords": ["principal", "director", "head", "kurmwanshi", "leadership"],
+      "reply": "Our principal is Mr. R. P. Kurmwanshi. He has over 20 years of experience in educational leadership, and under his guidance, DAV Gyanodaya Vidya Mandir blends rich Vedic principles of character building with modern scholastic excellence."
+    },
+    {
+      "keywords": ["cbse", "affiliation", "board", "affiliated", "registered"],
+      "reply": "DAV Gyanodaya Vidya Mandir Narsingarh (Damoh) is a co-educational day school affiliated with the Central Board of Secondary Education (CBSE), New Delhi. Affiliation No: 1030467. We strictly adhere to NCF and CBSE guidelines for academic streams and examinations."
+    },
+    {
+      "keywords": ["course", "subject", "stream", "streams", "class 11", "class 12"],
+      "reply": "For Senior Secondary sections (Classes XI & XII), we offer two primary academic streams:\n1. Science Stream: PCM (Physics, Chemistry, Mathematics) or PCB (Physics, Chemistry, Biology) with English Core and Computer Science / Physical Education as optional subjects.\n2. Commerce Stream: Accountancy, Business Studies, Economics, English Core, and Mathematics / Informatics Practices / Physical Education as optionals."
+    },
+    {
+      "keywords": ["infrastructure", "facility", "facilities", "smart class", "classroom"],
+      "reply": "Our campus features standard infrastructure including:\n- Dynamic Smart Classrooms with smart interactive boards and digital projector setups.\n- Resource-rich Library holding over 5,000+ reference books, magazines, and educational journals.\n- Well-ventilated classrooms with ergonomically friendly wooden desks.\n- Purified RO drinking water stations and separate hygiene facilities for boys and girls."
+    },
+    {
+      "keywords": ["lab", "labs", "laboratory", "computer", "physics", "chemistry", "biology"],
+      "reply": "We offer separate high-standard laboratories to support experiential learning:\n- Physics Lab: Equipped with optical benches, electrical apparatus, and mechanics kits.\n- Chemistry Lab: Stocked safely with analytical reagents, gas burners, and testing glassware.\n- Biology Lab: Contains high-resolution compound microscopes, preserved specimens, and anatomical charts.\n- IT & Computer Lab: Featuring 30+ high-speed modern desktops connected with high-speed internet for digital literacy."
+    },
+    {
+      "keywords": ["sport", "sports", "game", "games", "activity", "playground", "athletics"],
+      "reply": "We highly value holistic fitness and physical development! We offer professional training in:\n- Cricket, Football, Volleyball, and Badminton on our extensive outdoor playground.\n- Indoor games like Table Tennis, Chess, and Carrom.\n- Regular Athletics track sports meets.\n- Daily morning mass drill assemblies and inter-house leagues."
+    },
+    {
+      "keywords": ["yoga", "meditation", "mental", "wellness", "peace"],
+      "reply": "In line with our rich Vedic heritage, students participate in structured Yoga and Meditation assemblies every morning. This helps improve focus, emotional resilience, mental clarity, and physical flexibility under trained instructors."
+    },
+    {
+      "keywords": ["contact", "phone", "email", "address", "call", "location", "locate", "map"],
+      "reply": "You can connect with us via the following channels:\n- Phone: +91 7601-285623\n- Email: principal.davgvm@gmail.com\n- Address: Narsingarh, Damoh, Madhya Pradesh, PIN - 470675\nFeel free to drop in during public office hours (08:30 AM to 02:30 PM) or write a query on our online Contact page!"
+    },
+    {
+      "keywords": ["davcmc", "dav", "history", "legacy", "dayanand"],
+      "reply": "DAV (Dayanand Anglo-Vedic) schools are managed by the DAV College Managing Committee (DAVCMC), New Delhi, which is the largest non-governmental educational organization in India. The movement was founded in 1886 by followers of Maharishi Dayanand Saraswati to blend English scientific education with traditional Vedic wisdom."
+    },
+    {
+      "keywords": ["exam", "exams", "board exam", "mid-term", "schedule"],
+      "reply": "Exam schedules and circulars are updated on the Portal notice board and the News page. Typically, Mid-Term exams commence in October, and Final Board Prep examinations happen in January/February, followed by the main CBSE exams in March."
+    },
+    {
+      "keywords": ["notice", "announcement", "news", "updates", "happenings"],
+      "reply": "To stay updated with the latest happenings at DAV GVM, please visit our dedicated News & Announcements page (/news) or check the notices section in your student Portal (/dashboard)!"
+    },
+    {
+      "keywords": ["uniform", "dress", "code"],
+      "reply": "Students must wear the prescribed DAV GVM uniform. \n- Summer Uniform: Sky blue shirt, navy blue trousers/skirt, black leather shoes, navy blue socks, school belt, and tie.\n- Winter Uniform: Add navy blue school pullover/blazer with emblem.\n- Wednesdays & Saturdays: White house T-shirt, white trousers/skirt, white canvas shoes, and white socks."
+    },
+    {
+      "keywords": ["transport", "bus", "van", "commute", "travel"],
+      "reply": "We offer structured school bus and van transportation services connecting major residential sectors across Narsingarh and surrounding towns in Damoh. Transport fees are calculated based on distance. Please contact the administrative desk for bus route maps and fees."
+    },
+    {
+      "keywords": ["result", "results", "rank", "percentage", "toppers"],
+      "reply": "DAV GVM maintains an outstanding academic track record! In the latest CBSE board exams, our school achieved a 100% passing rate, with several students securing above 95% aggregate scores. Check our News page (/news) to see our board toppers!"
+    }
+  ]
+}

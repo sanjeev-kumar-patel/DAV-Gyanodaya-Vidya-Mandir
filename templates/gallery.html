@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+
+{% block title %}DAV Gyanodaya Vidya Mandir | Campus & Event Gallery{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden bg-mesh min-h-screen pt-24 pb-16">
+  <!-- Ambient glowing background decorators -->
+  <div class="absolute top-10 left-[-5%] w-[450px] h-[450px] rounded-full glow-blob-blue animate-float pointer-events-none opacity-40"></div>
+  <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full glow-blob-cyan animate-float pointer-events-none opacity-30"></div>
+  <div class="absolute bottom-10 left-[20%] w-[400px] h-[400px] rounded-full glow-blob-purple animate-float-delayed pointer-events-none opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Hero Banner -->
+    <header class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"></path>
+        </svg>
+        Capturing Moments
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black text-foreground">
+        School Event <span class="bg-gradient-to-r from-accent-cyan to-primary bg-clip-text text-transparent">Gallery</span>
+      </h1>
+      <p class="text-lg text-muted leading-relaxed">
+        A premium visual journey celebrating campus events, academic milestones, cultural festivals, and everyday excellence at DAV Gyanodaya Vidya Mandir.
+      </p>
+    </header>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-center items-center gap-3 mb-12">
+      <button class="gallery-filter-btn active bg-primary text-white font-bold text-xs px-5 py-2.5 rounded-full transition-all border border-transparent shadow-md shadow-primary/10" data-filter="all">All Albums</button>
+      <button class="gallery-filter-btn bg-surface border border-border text-muted font-bold text-xs px-5 py-2.5 rounded-full hover:bg-surface-hover hover:text-foreground transition-all" data-filter="event">Events</button>
+      <button class="gallery-filter-btn bg-surface border border-border text-muted font-bold text-xs px-5 py-2.5 rounded-full hover:bg-surface-hover hover:text-foreground transition-all" data-filter="achievement">Achievements</button>
+      <button class="gallery-filter-btn bg-surface border border-border text-muted font-bold text-xs px-5 py-2.5 rounded-full hover:bg-surface-hover hover:text-foreground transition-all" data-filter="celebration">Celebrations</button>
+      <button class="gallery-filter-btn bg-surface border border-border text-muted font-bold text-xs px-5 py-2.5 rounded-full hover:bg-surface-hover hover:text-foreground transition-all" data-filter="cultural">Cultural</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for album in [
+        {
+          "title": "Jal Pakhwada 2026",
+          "date": "April 2026",
+          "count": 12,
+          "image": "https://images.unsplash.com/photo-1541339907198-e08759df9a73?auto=format&fit=crop&q=80&w=800",
+          "category": "event",
+          "photos": [
+            "https://images.unsplash.com/photo-1541339907198-e08759df9a73?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+          ]
+        },
+        {
+          "title": "Class X Toppers 2025-26",
+          "date": "May 2026",
+          "count": 8,
+          "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+          "category": "achievement",
+          "photos": [
+            "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
+          ]
+        },
+        {
+          "title": "Parents Orientation Program",
+          "date": "March 2025",
+          "count": 15,
+          "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+          "category": "event",
+          "photos": [
+            "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1544717297-fa15735a5ac0?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800"
+          ]
+        },
+        {
+          "title": "International Yoga Day",
+          "date": "June 2025",
+          "count": 24,
+          "image": "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800",
+          "category": "celebration",
+          "photos": [
+            "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=800"
+          ]
+        },
+        {
+          "title": "National Youth Day",
+          "date": "Jan 2025",
+          "count": 10,
+          "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800",
+          "category": "cultural",
+          "photos": [
+            "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800"
+          ]
+        },
+        {
+          "title": "Teachers Day",
+          "date": "Sept 2025",
+          "count": 20,
+          "image": "https://images.unsplash.com/photo-1544717297-fa15735a5ac0?auto=format&fit=crop&q=80&w=800",
+          "category": "celebration",
+          "photos": [
+            "https://images.unsplash.com/photo-1544717297-fa15735a5ac0?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800"
+          ]
+        }
+      ] %}
+      <div class="gallery-card theme-card rounded-[2rem] overflow-hidden bg-surface border border-border group cursor-pointer" data-category="{{ album.category }}" data-photos="{{ album.photos|join(',') }}" data-title="{{ album.title }}">
+        <div class="w-full aspect-[4/3] overflow-hidden relative">
+          <img src="{{ album.image }}" alt="{{ album.title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          
+          <!-- Photo Count Overlay -->
+          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="flex items-center gap-2 text-white font-bold text-sm bg-black/40 px-5 py-2.5 rounded-full backdrop-blur-sm border border-white/10 shadow-lg">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>View Album</span>
+            </div>
+          </div>
+          
+          <!-- Category Tag -->
+          <div class="absolute top-4 left-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/95 text-white backdrop-blur-sm">
+              {{ album.category }}
+            </span>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-xs text-muted mb-2 font-medium">
+            <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"></path>
+            </svg>
+            {{ album.date }} • {{ album.count }} Photos
+          </div>
+          <h3 class="text-lg font-bold text-foreground transition-colors group-hover:text-primary leading-snug">
+            {{ album.title }}
+          </h3>
+        </div>
+      </div>
+      {% endfor %}
+    </main>
+  </div>
+</div>
+
+<!-- ─── PREMIUM LIGHTBOX MODAL ─── -->
+<div id="lightbox-modal" class="hidden fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all border border-white/10" aria-label="Close Lightbox">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <div class="max-w-5xl w-full flex flex-col items-center gap-6">
+    <h3 id="lightbox-title" class="text-xl font-bold text-white text-center leading-snug">Album Title</h3>
+    
+    <!-- Image Box -->
+    <div class="relative w-full aspect-video md:max-h-[60vh] bg-black/40 rounded-3xl overflow-hidden border border-white/10">
+      <img id="lightbox-img" src="" alt="Active View" class="w-full h-full object-contain">
+      
+      <!-- Prev Button -->
+      <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full border border-white/10 hover:scale-105 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+        </svg>
+      </button>
+
+      <!-- Next Button -->
+      <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full border border-white/10 hover:scale-105 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Indicator Dots -->
+    <div id="lightbox-indicators" class="flex items-center gap-2">
+      <!-- Dots injected dynamically -->
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Dynamic Grid Filter
+    const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    const cards = document.querySelectorAll('.gallery-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle Active styles
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md', 'shadow-primary/10');
+          b.classList.add('bg-surface', 'border', 'border-border', 'text-muted');
+        });
+        btn.classList.add('active', 'bg-primary', 'text-white', 'shadow-md', 'shadow-primary/10');
+        btn.classList.remove('bg-surface', 'border', 'border-border', 'text-muted');
+
+        const filterValue = btn.getAttribute('data-filter');
+        
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filterValue === 'all' || cat === filterValue) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. Lightbox Logic
+    const modal = document.getElementById('lightbox-modal');
+    const modalTitle = document.getElementById('lightbox-title');
+    const modalImg = document.getElementById('lightbox-img');
+    const modalClose = document.getElementById('lightbox-close');
+    const modalPrev = document.getElementById('lightbox-prev');
+    const modalNext = document.getElementById('lightbox-next');
+    const modalIndicators = document.getElementById('lightbox-indicators');
+
+    let activePhotos = [];
+    let activeIndex = 0;
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.getAttribute('data-title');
+        const photosStr = card.getAttribute('data-photos');
+        if (!photosStr) return;
+
+        activePhotos = photosStr.split(',');
+        activeIndex = 0;
+
+        modalTitle.textContent = title;
+        updateLightboxImage();
+        
+        // Show modal with fade
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+
+    function updateLightboxImage() {
+      modalImg.src = activePhotos[activeIndex];
+      
+      // Update Dots
+      modalIndicators.innerHTML = '';
+      activePhotos.forEach((p, idx) => {
+        const dot = document.createElement('span');
+        dot.className = `w-2 h-2 rounded-full cursor-pointer transition-all ${idx === activeIndex ? 'bg-primary w-5' : 'bg-white/40'}`;
+        dot.addEventListener('click', () => {
+          activeIndex = idx;
+          updateLightboxImage();
+        });
+        modalIndicators.appendChild(dot);
+      });
+    }
+
+    modalPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      activeIndex = (activeIndex - 1 + activePhotos.length) % activePhotos.length;
+      updateLightboxImage();
+    });
+
+    modalNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      activeIndex = (activeIndex + 1) % activePhotos.length;
+      updateLightboxImage();
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+  });
+</script>
+{% endblock %}

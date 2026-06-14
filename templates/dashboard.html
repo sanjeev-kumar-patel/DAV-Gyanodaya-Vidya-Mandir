@@ -1,0 +1,435 @@
+{% extends "base.html" %}
+
+{% block title %}DAV Gyanodaya Vidya Mandir | Student & Admin Portal{% endblock %}
+
+{% block head %}
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden bg-mesh min-h-screen pt-24 pb-16">
+  <!-- Ambient background glow blobs -->
+  <div class="absolute top-10 left-[-5%] w-[450px] h-[450px] rounded-full glow-blob-blue animate-float pointer-events-none opacity-30"></div>
+  <div class="absolute top-[40%] right-[-5%] w-[450px] h-[450px] rounded-full glow-blob-purple animate-float-delayed pointer-events-none opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+      <div>
+        <h1 class="text-3xl sm:text-5xl font-black text-foreground mb-2">Academic Portal</h1>
+        <p class="text-muted">Real-time student statistics, schedule, and database administration.</p>
+      </div>
+      
+      <!-- User Profile Card -->
+      <div class="flex items-center gap-4 p-3 rounded-2xl glass-card border border-white/10 max-w-xs self-start">
+        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+          AJ
+        </div>
+        <div class="overflow-hidden">
+          <p class="text-sm font-bold text-foreground truncate">Alex Johnson</p>
+          <p class="text-xs text-muted">Class 12-A • Student Admin</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+      
+      <!-- Left 2-Columns: Statistics & Tables -->
+      <div class="xl:col-span-2 space-y-8">
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="glass-card p-6 rounded-3xl border border-white/10">
+            <p class="text-xs font-semibold text-muted mb-2 uppercase tracking-wider">Cumulative GPA</p>
+            <div class="flex items-end justify-between">
+              <h3 class="text-3xl font-black text-foreground">3.92</h3>
+              <span class="text-xs font-bold bg-primary/20 text-primary border border-primary/20 px-2.5 py-1 rounded-lg">+0.1</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card p-6 rounded-3xl border border-white/10">
+            <p class="text-xs font-semibold text-muted mb-2 uppercase tracking-wider">Course Progress</p>
+            <div class="flex items-end justify-between">
+              <h3 class="text-3xl font-black text-foreground">84%</h3>
+              <span class="text-xs font-bold bg-accent-cyan/20 text-accent-cyan border border-accent-cyan/20 px-2.5 py-1 rounded-lg">+12%</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card p-6 rounded-3xl border border-white/10">
+            <p class="text-xs font-semibold text-muted mb-2 uppercase tracking-wider">Avg Attendance</p>
+            <div class="flex items-end justify-between">
+              <h3 class="text-3xl font-black text-foreground">96%</h3>
+              <span class="text-xs font-bold bg-accent-purple/20 text-accent-purple border border-accent-purple/20 px-2.5 py-1 rounded-lg">+2%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Attendance Chart Card -->
+        <div class="glass-card p-8 rounded-[2.5rem] border border-white/10">
+          <h3 class="text-xl font-bold mb-6 text-foreground flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+            Weekly Attendance Analysis
+          </h3>
+          <div class="h-[300px] w-full relative">
+            <canvas id="attendanceChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Dynamic Students Database Management Card -->
+        <div class="glass-card p-8 rounded-[2.5rem] border border-white/10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-foreground">Student Registry</h3>
+              <p class="text-xs text-muted">Dynamically synced with Python Flask Mock Database API.</p>
+            </div>
+            
+            <button id="btn-add-student" class="btn-primary py-2 px-5 text-sm rounded-xl flex items-center gap-2 shadow-none self-start">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+              </svg>
+              Enroll Student
+            </button>
+          </div>
+
+          <!-- Student Add Form (Collapsible Card) -->
+          <div id="add-student-form-container" class="hidden p-6 rounded-2xl bg-background-secondary border border-border transition-all duration-300">
+            <h4 class="font-bold text-sm text-foreground mb-4">Enroll New Student Record</h4>
+            <form id="add-student-form" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+              <div>
+                <label class="block text-xs font-semibold text-muted mb-2 uppercase" for="student-name">Full Name</label>
+                <input type="text" id="student-name" required class="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground" placeholder="e.g. John Doe">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-muted mb-2 uppercase" for="student-grade">Class & Section</label>
+                <input type="text" id="student-grade" required class="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground" placeholder="e.g. 11B">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-muted mb-2 uppercase" for="student-attendance">Attendance %</label>
+                <input type="number" id="student-attendance" required min="0" max="100" class="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground" placeholder="0-100">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-muted mb-2 uppercase" for="student-gpa">GPA (0.0 - 4.0)</label>
+                <input type="number" id="student-gpa" required min="0" max="4" step="0.01" class="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground" placeholder="0.0 - 4.0">
+              </div>
+              <div class="sm:col-span-2 lg:col-span-4 flex justify-end gap-3 mt-2">
+                <button type="button" id="btn-cancel-add" class="bg-transparent hover:bg-border text-foreground px-5 py-2.5 text-sm font-semibold rounded-xl transition-all">Cancel</button>
+                <button type="submit" class="btn-primary py-2.5 px-6 text-sm rounded-xl shadow-none">Save Record</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div id="table-loading" class="flex justify-center items-center py-12">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          </div>
+
+          <!-- Student Table View -->
+          <div id="table-wrapper" class="hidden overflow-x-auto rounded-2xl border border-border bg-background/50">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-background text-muted uppercase text-xs font-semibold border-b border-border">
+                <tr>
+                  <th class="px-6 py-4">ID</th>
+                  <th class="px-6 py-4">Name</th>
+                  <th class="px-6 py-4">Class</th>
+                  <th class="px-6 py-4">Attendance</th>
+                  <th class="px-6 py-4">GPA</th>
+                  <th class="px-6 py-4 text-right">Status</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body" class="divide-y divide-border">
+                <!-- Dynamically generated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right 1-Column: Schedule & Announcements -->
+      <div class="space-y-8">
+        
+        <!-- Today's Schedule Card -->
+        <div class="glass-card p-6 rounded-[2.5rem] border border-white/10 space-y-6">
+          <h3 class="text-xl font-bold text-foreground">Today's Class Schedule</h3>
+          
+          <div class="space-y-6">
+            <!-- Class Item 1 -->
+            <div class="flex items-start gap-4">
+              <div class="text-xs font-bold text-muted w-16 pt-1 uppercase">08:00 AM</div>
+              <div class="flex-1 p-4 rounded-2xl border border-border bg-background-secondary text-foreground">
+                <h4 class="font-bold text-sm">Mathematics Stream</h4>
+                <div class="flex items-center justify-between mt-2 text-xs text-muted">
+                  <span>Prof. J. Patel</span>
+                  <span class="border border-border px-2 py-0.5 rounded text-[10px]">Room 104</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class Item 2 (Active) -->
+            <div class="flex items-start gap-4">
+              <div class="text-xs font-bold text-muted w-16 pt-1 uppercase">10:30 AM</div>
+              <div class="flex-1 p-4 rounded-2xl bg-primary text-white shadow-lg shadow-primary/20">
+                <h4 class="font-bold text-sm">Advanced Physics Lab</h4>
+                <div class="flex items-center justify-between mt-2 text-xs opacity-90">
+                  <span>Prof. M. K. Soni</span>
+                  <span class="border border-white/30 px-2 py-0.5 rounded text-[10px]">Physics Lab</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class Item 3 -->
+            <div class="flex items-start gap-4">
+              <div class="text-xs font-bold text-muted w-16 pt-1 uppercase">01:00 PM</div>
+              <div class="flex-1 p-4 rounded-2xl border border-border bg-background-secondary text-foreground">
+                <h4 class="font-bold text-sm">English Literature</h4>
+                <div class="flex items-center justify-between mt-2 text-xs text-muted">
+                  <span>Mrs. S. Banafar</span>
+                  <span class="border border-border px-2 py-0.5 rounded text-[10px]">Room 102</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assignments Board -->
+        <div class="glass-card p-6 rounded-[2.5rem] border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-foreground">Pending Tasks</h3>
+            <button class="text-primary hover:text-primary-dark font-bold text-xs">View All</button>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Assignment 1 -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-background-secondary border border-border">
+              <div>
+                <h5 class="font-bold text-sm text-foreground">Quantum Mechanics Paper</h5>
+                <span class="text-xs text-muted">Physics • Due Tomorrow</span>
+              </div>
+              <span class="text-[10px] font-bold bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-2 py-0.5 rounded-full">Pending</span>
+            </div>
+            <!-- Assignment 2 -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-background-secondary border border-border">
+              <div>
+                <h5 class="font-bold text-sm text-foreground">World War II Analysis</h5>
+                <span class="text-xs text-muted">Modern History • Due 2 days</span>
+              </div>
+              <span class="text-[10px] font-bold bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-full">In Progress</span>
+            </div>
+            <!-- Assignment 3 -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-background-secondary border border-border opacity-70">
+              <div>
+                <h5 class="font-bold text-sm text-foreground">AI Ethics Presentation</h5>
+                <span class="text-xs text-muted">Computing • Completed</span>
+              </div>
+              <span class="text-[10px] font-bold bg-green-500/10 text-green-500 border border-green-500/20 px-2 py-0.5 rounded-full">Done</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Notices -->
+        <div class="glass-card p-6 rounded-[2.5rem] border border-white/10 space-y-4">
+          <h3 class="text-xl font-bold text-foreground font-bold">Important Notices</h3>
+          
+          <div class="space-y-4">
+            <div class="p-4 rounded-2xl bg-primary/5 border-l-4 border-primary space-y-1">
+              <span class="text-[9px] font-bold bg-primary/20 text-primary border border-primary/20 px-2 py-0.5 rounded-full uppercase tracking-wider">Urgent</span>
+              <h5 class="font-bold text-sm text-foreground mt-1">Mid-Term Board Exams Schedule</h5>
+              <p class="text-xs text-muted">Exams commence from October 15, 2026. Admit cards distributed at the counter.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-accent-purple/5 border-l-4 border-accent-purple space-y-1">
+              <span class="text-[9px] font-bold bg-accent-purple/20 text-accent-purple border border-accent-purple/20 px-2 py-0.5 rounded-full uppercase tracking-wider">Event</span>
+              <h5 class="font-bold text-sm text-foreground mt-1">Annual Science Exhibition 2026</h5>
+              <p class="text-xs text-muted">Interactive prototypes registrations close next Friday. Theme: Clean Energy.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. ChartJS Render Logic
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+    
+    // Check active theme
+    const isDark = document.documentElement.classList.contains('dark');
+    const primaryColor = '#2563eb';
+    const accentColor = '#00f7ff';
+    const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+    const textColor = isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)';
+
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+          label: 'Attendance Rate %',
+          data: [95, 88, 92, 98, 94],
+          backgroundColor: primaryColor,
+          hoverBackgroundColor: accentColor,
+          borderRadius: 12,
+          borderSkipped: false,
+          barThickness: window.innerWidth > 640 ? 32 : 16,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            padding: 12,
+            cornerRadius: 12,
+            backgroundColor: isDark ? 'rgba(15, 23, 42, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+            titleColor: isDark ? '#fff' : '#0f172a',
+            bodyColor: isDark ? '#cbd5e1' : '#475569',
+            borderColor: 'rgba(37, 99, 235, 0.1)',
+            borderWidth: 1,
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: gridColor },
+            ticks: { color: textColor, font: { family: 'Inter' } }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: textColor, font: { family: 'Inter' } }
+          }
+        }
+      }
+    });
+
+    // Theme Toggle listener to re-color charts
+    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          const isDarkNow = document.documentElement.classList.contains('dark');
+          const gridColorNow = isDarkNow ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+          const textColorNow = isDarkNow ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)';
+          
+          myChart.options.scales.y.grid.color = gridColorNow;
+          myChart.options.scales.y.ticks.color = textColorNow;
+          myChart.options.scales.x.ticks.color = textColorNow;
+          
+          myChart.update();
+        }, 100);
+      });
+    });
+
+    // 2. Fetch and Add Students Registry Logic
+    const tableLoading = document.getElementById('table-loading');
+    const tableWrapper = document.getElementById('table-wrapper');
+    const studentTableBody = document.getElementById('student-table-body');
+    const btnAddStudent = document.getElementById('btn-add-student');
+    const addStudentFormContainer = document.getElementById('add-student-form-container');
+    const btnCancelAdd = document.getElementById('btn-cancel-add');
+    const addStudentForm = document.getElementById('add-student-form');
+
+    // Toggle Form visibility
+    btnAddStudent.addEventListener('click', () => {
+      addStudentFormContainer.classList.toggle('hidden');
+    });
+
+    btnCancelAdd.addEventListener('click', () => {
+      addStudentFormContainer.classList.add('hidden');
+      addStudentForm.reset();
+    });
+
+    // Load Students API
+    async function loadStudents() {
+      tableLoading.classList.remove('hidden');
+      tableWrapper.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/students');
+        const students = await res.json();
+        
+        studentTableBody.innerHTML = '';
+        students.forEach(student => {
+          const row = document.createElement('tr');
+          row.className = 'hover:bg-surface-hover/40 transition-colors';
+          row.innerHTML = `
+            <td class="px-6 py-4 font-bold text-foreground">#00${student.id}</td>
+            <td class="px-6 py-4 font-semibold text-foreground">${student.name}</td>
+            <td class="px-6 py-4 text-muted">${student.grade}</td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-16 bg-border h-2 rounded-full overflow-hidden">
+                  <div class="bg-primary h-full" style="width: ${student.attendance}%"></div>
+                </div>
+                <span class="text-xs font-semibold">${student.attendance}%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4 font-bold text-foreground">${student.gpa.toFixed(2)}</td>
+            <td class="px-6 py-4 text-right">
+              <span class="inline-block text-[10px] font-bold border px-2.5 py-0.5 rounded-full ${
+                student.attendance >= 90 
+                  ? 'bg-green-500/10 text-green-500 border-green-500/20' 
+                  : 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20'
+              }">
+                ${student.attendance >= 90 ? 'Excellent' : 'Needs Review'}
+              </span>
+            </td>
+          `;
+          studentTableBody.appendChild(row);
+        });
+
+        tableLoading.classList.add('hidden');
+        tableWrapper.classList.remove('hidden');
+      } catch (err) {
+        console.error('Error fetching students:', err);
+        tableLoading.innerHTML = '<p class="text-sm text-red-500 font-bold">Failed to load student registry.</p>';
+      }
+    }
+
+    // Submit Add Student Form
+    addStudentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('student-name').value.trim();
+      const grade = document.getElementById('student-grade').value.trim();
+      const attendance = document.getElementById('student-attendance').value;
+      const gpa = document.getElementById('student-gpa').value;
+
+      if (!name || !grade || !attendance || !gpa) return;
+
+      try {
+        const response = await fetch('/api/students', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, grade, attendance, gpa })
+        });
+
+        if (response.ok) {
+          addStudentForm.reset();
+          addStudentFormContainer.classList.add('hidden');
+          // Reload the registry database
+          await loadStudents();
+        } else {
+          const errData = await response.json();
+          alert(errData.error || 'Failed to enroll student');
+        }
+      } catch (err) {
+        console.error('Error adding student:', err);
+        alert('Failed to connect to the server.');
+      }
+    });
+
+    // Initial Load
+    loadStudents();
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}DAV GVM | Principal's Desk{% endblock %}
+
+{% block content %}
+<div class="bg-background min-h-screen pt-20">
+
+  <!-- ─── HERO ─── -->
+  <section class="relative py-24 lg:py-32 text-white overflow-hidden min-h-[450px] flex items-center bg-slate-950">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200');">
+      <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10 space-y-4">
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+        Principal's <span class="text-accent-cyan">Desk</span>
+      </h1>
+      <p class="max-w-3xl mx-auto text-md sm:text-lg opacity-80 leading-relaxed">
+        A message of vision, dedication, and commitment from our esteemed Principal.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── PRINCIPAL MESSAGE ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Photo -->
+    <div class="relative">
+      <div class="relative w-full max-w-[450px] aspect-[4/5] mx-auto rounded-[3rem] overflow-hidden shadow-2xl border border-border">
+        <img src="https://images.unsplash.com/photo-1544717297-fa15735a5ac0?auto=format&fit=crop&q=80&w=600" alt="Principal Mr. R. P. Kurmwanshi" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/45 to-transparent text-white">
+          <h3 class="text-xl font-bold">Mr. R. P. Kurmwanshi</h3>
+          <p class="text-accent-cyan text-xs font-semibold mt-0.5">Principal, DAV GVM Narsingarh</p>
+          <p class="text-white/60 text-xs mt-0.5">M.Sc., B.Ed. | 20+ Years Experience</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="space-y-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Message from the <span class="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">Principal</span></h2>
+      <blockquote class="text-md sm:text-lg italic text-muted leading-relaxed border-l-4 border-primary pl-6 py-2">
+        "Our focus is on molding students into responsible citizens with a blend of Vedic heritage and modern technology. We provide a safe and intellectually challenging environment to empower students academically and creatively. Education is not merely about textbooks — it is about building character, instilling values, and nurturing dreams."
+      </blockquote>
+      <p class="text-sm sm:text-md text-muted leading-relaxed">
+        At DAV Gyanodaya Vidya Mandir, we believe that every child carries infinite potential. Our dedicated faculty, comprehensive curriculum, and value-based education system work together to unlock this potential. We emphasize holistic growth through academics, sports, yoga, arts, and community service.
+      </p>
+      <p class="text-sm sm:text-md text-muted leading-relaxed">
+        I warmly invite parents and guardians to visit our campus, experience our learning environment, and join us in this wonderful journey of nurturing the leaders of tomorrow.
+      </p>
+      <p class="font-bold text-foreground text-md">— Mr. R. P. Kurmwanshi</p>
+    </div>
+  </section>
+
+  <!-- ─── EDUCATIONAL PHILOSOPHY ─── -->
+  <section class="py-20 bg-background-secondary/50 border-y border-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">Educational Philosophy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Vedic Foundation -->
+        <div class="glass-card rounded-[2.5rem] p-8 hover:border-primary/30 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Vedic Foundation</h3>
+          <p class="text-sm text-muted leading-relaxed">Rooting education in truth, dharma, and the timeless Arya Samaj principles of moral and ethical development as envisioned by Maharishi Dayanand Saraswati.</p>
+        </div>
+
+        <!-- Modern Pedagogy -->
+        <div class="glass-card rounded-[2.5rem] p-8 hover:border-accent-cyan/30 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Modern Pedagogy</h3>
+          <p class="text-sm text-muted leading-relaxed">Integrating smart classrooms, digital learning tools, and interactive teaching methodologies to prepare students for the challenges of the 21st century.</p>
+        </div>
+
+        <!-- Holistic Development -->
+        <div class="glass-card rounded-[2.5rem] p-8 hover:border-accent-purple/30 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent-purple/10 flex items-center justify-center text-accent-purple mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Holistic Development</h3>
+          <p class="text-sm text-muted leading-relaxed">Nurturing mind, body, and spirit through sports, yoga, arts, cultural programs, and community service alongside rigorous academics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACHIEVEMENTS ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">Key Achievements</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="glass-card rounded-3xl p-8 text-center hover:border-primary/30 transition-all duration-300">
+        <h3 class="text-4xl font-black text-primary mb-2">98.6%</h3>
+        <p class="text-xs text-muted uppercase tracking-wider font-semibold">CBSE Pass Rate</p>
+      </div>
+      <div class="glass-card rounded-3xl p-8 text-center hover:border-accent-purple/30 transition-all duration-300">
+        <h3 class="text-4xl font-black text-accent-purple mb-2">25+</h3>
+        <p class="text-xs text-muted uppercase tracking-wider font-semibold">Years of Service</p>
+      </div>
+      <div class="glass-card rounded-3xl p-8 text-center hover:border-primary/30 transition-all duration-300">
+        <h3 class="text-4xl font-black text-primary mb-2">1200+</h3>
+        <p class="text-xs text-muted uppercase tracking-wider font-semibold">Alumni Network</p>
+      </div>
+      <div class="glass-card rounded-3xl p-8 text-center hover:border-accent-purple/30 transition-all duration-300">
+        <h3 class="text-4xl font-black text-accent-purple mb-2">15+</h3>
+        <p class="text-xs text-muted uppercase tracking-wider font-semibold">National Awards</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="relative overflow-hidden rounded-[3rem] p-12 md:p-20 border border-white/20 text-center glass-card">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/15 blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-purple/15 blur-[100px] pointer-events-none"></div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Want to Connect?</h2>
+      <p class="text-md text-muted max-w-xl mx-auto mb-8 leading-relaxed">
+        Have questions about our school or want to schedule a campus visit? We'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn-primary px-10 py-4 text-md rounded-2xl shadow-lg hover:shadow-primary/30 inline-block">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

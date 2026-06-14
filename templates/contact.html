@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}DAV GVM | Contact Us{% endblock %}
+
+{% block content %}
+<div class="bg-background min-h-screen pt-20">
+
+  <!-- ─── HERO ─── -->
+  <section class="relative py-24 lg:py-32 text-white overflow-hidden min-h-[450px] flex items-center bg-slate-950">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=1200');">
+      <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10 space-y-4">
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+        Get In <span class="text-accent-cyan">Touch</span>
+      </h1>
+      <p class="max-w-3xl mx-auto text-md sm:text-lg opacity-80 leading-relaxed">
+        We'd love to hear from you. Reach out for admissions, queries, or to schedule a campus visit.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT INFO CARDS ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Phone -->
+      <div class="glass-card rounded-[2.5rem] p-8 text-center hover:border-primary/30 transition-all duration-300">
+        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Phone</h3>
+        <a href="tel:+917601285623" class="text-primary font-semibold hover:underline">+91 7601-285623</a>
+        <p class="text-xs text-muted mt-2">Mon – Sat, 8:00 AM – 3:00 PM</p>
+      </div>
+      <!-- Email -->
+      <div class="glass-card rounded-[2.5rem] p-8 text-center hover:border-accent-cyan/30 transition-all duration-300">
+        <div class="w-16 h-16 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Email</h3>
+        <a href="mailto:principal.davgvm@gmail.com" class="text-primary font-semibold hover:underline text-sm">principal.davgvm@gmail.com</a>
+        <p class="text-xs text-muted mt-2">We respond within 24 hours</p>
+      </div>
+      <!-- Address -->
+      <div class="glass-card rounded-[2.5rem] p-8 text-center hover:border-accent-purple/30 transition-all duration-300">
+        <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 flex items-center justify-center text-accent-purple mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Address</h3>
+        <p class="text-sm text-muted">Narsingarh, Damoh<br>Madhya Pradesh — 470675</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT FORM & MAP ─── -->
+  <section class="py-20 bg-background-secondary/50 border-y border-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Form -->
+      <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+        <h3 class="text-2xl font-extrabold mb-8">Send Us a Message</h3>
+        <form id="contact-form" class="space-y-5">
+          <div>
+            <label for="contact-name" class="block text-sm font-semibold mb-2">Full Name</label>
+            <input type="text" id="contact-name" name="name" required class="w-full bg-slate-100 dark:bg-slate-800 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground transition-all" placeholder="Your full name">
+          </div>
+          <div>
+            <label for="contact-email" class="block text-sm font-semibold mb-2">Email Address</label>
+            <input type="email" id="contact-email" name="email" required class="w-full bg-slate-100 dark:bg-slate-800 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground transition-all" placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="contact-subject" class="block text-sm font-semibold mb-2">Subject</label>
+            <input type="text" id="contact-subject" name="subject" required class="w-full bg-slate-100 dark:bg-slate-800 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground transition-all" placeholder="Admission inquiry, feedback, etc.">
+          </div>
+          <div>
+            <label for="contact-message" class="block text-sm font-semibold mb-2">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required class="w-full bg-slate-100 dark:bg-slate-800 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground transition-all resize-none" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full py-3.5 rounded-xl text-center font-bold">
+            Send Message
+          </button>
+          <p id="contact-success" class="hidden text-green-500 text-sm text-center font-semibold mt-2">✓ Message sent successfully! We'll get back to you soon.</p>
+        </form>
+      </div>
+
+      <!-- Map -->
+      <div class="glass-card rounded-[2.5rem] overflow-hidden min-h-[400px]">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14646.84!2d79.16!3d23.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981f5e5a5555555%3A0x5555555555555555!2sNarsingarh%2C%20Damoh%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" 
+          width="100%" 
+          height="100%" 
+          style="border:0; min-height:500px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="DAV GVM Location Map">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      document.getElementById('contact-success').classList.remove('hidden');
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      this.reset();
+      setTimeout(() => {
+        document.getElementById('contact-success').classList.add('hidden');
+      }, 5000);
+    }, 1000);
+  });
+</script>
+{% endblock %}

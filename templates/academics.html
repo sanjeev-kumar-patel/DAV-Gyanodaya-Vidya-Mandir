@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}DAV GVM | Academics{% endblock %}
+
+{% block content %}
+<div class="bg-background min-h-screen pt-20">
+
+  <!-- ─── HERO ─── -->
+  <section class="relative py-24 lg:py-32 text-white overflow-hidden min-h-[450px] flex items-center bg-slate-950">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1200');">
+      <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10 space-y-4">
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+        Academic <span class="text-accent-cyan">Excellence</span>
+      </h1>
+      <p class="max-w-3xl mx-auto text-md sm:text-lg opacity-80 leading-relaxed">
+        A comprehensive, CBSE-aligned curriculum designed to develop critical thinkers and future leaders.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── CURRICULUM ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Our Curriculum</h2>
+    <p class="text-center text-muted max-w-xl mx-auto mb-16">A balanced blend of traditional DAV values and modern CBSE standards.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="theme-card rounded-[2.5rem] p-8 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">DAV CMC Publications</h3>
+        <p class="text-sm text-muted leading-relaxed">Textbooks and supplementary materials published by the DAV College Managing Committee, enriched with Vedic values and moral education.</p>
+      </div>
+      <div class="theme-card rounded-[2.5rem] p-8 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-accent-purple/10 flex items-center justify-center text-accent-purple mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">NCERT / CBSE Framework</h3>
+        <p class="text-sm text-muted leading-relaxed">Following the latest NCERT syllabus aligned with CBSE board guidelines across all subjects from Nursery through Class XII.</p>
+      </div>
+      <div class="theme-card rounded-[2.5rem] p-8 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mx-auto mb-6">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Digital Literacy Program</h3>
+        <p class="text-sm text-muted leading-relaxed">Computer science education with coding modules, digital tools, and practical lab sessions to prepare students for the tech-driven future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACADEMIC CALENDAR ─── -->
+  <section class="py-20 bg-background-secondary/50 border-y border-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">Academic Calendar</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="glass-card rounded-[2.5rem] p-8 hover:border-primary/30 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-lg">T1</div>
+            <div>
+              <h3 class="font-bold text-lg">Term 1</h3>
+              <p class="text-xs text-muted">April — September</p>
+            </div>
+          </div>
+          <ul class="space-y-3 text-sm text-muted">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Session begins in April</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Unit Tests: May & August</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Half-Yearly Exams: September</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Summer Vacation: June</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Independence Day, Yoga Day</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-[2.5rem] p-8 hover:border-accent-purple/30 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-accent-purple text-white flex items-center justify-center font-bold text-lg">T2</div>
+            <div>
+              <h3 class="font-bold text-lg">Term 2</h3>
+              <p class="text-xs text-muted">October — March</p>
+            </div>
+          </div>
+          <ul class="space-y-3 text-sm text-muted">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-purple"></span> Diwali & Winter Breaks</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-purple"></span> Unit Tests: November & January</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-purple"></span> Annual Exams: March</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-purple"></span> Republic Day, Annual Day</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-purple"></span> Sports Day & Prize Distribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOUSE SYSTEM ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">House System</h2>
+    <p class="text-center text-muted max-w-xl mx-auto mb-16">Fostering team spirit, healthy competition, and leadership through our four proud houses.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Dayanand -->
+      <div class="rounded-[2.5rem] p-8 text-center text-white bg-gradient-to-br from-orange-500 to-orange-700 shadow-xl hover:-translate-y-2 transition-transform duration-300 cursor-default">
+        <div class="text-5xl mb-4">🔥</div>
+        <h3 class="text-xl font-extrabold mb-2">Dayanand House</h3>
+        <p class="text-sm text-white/80 leading-relaxed">Courage, Reform & Truth</p>
+        <div class="mt-4 inline-block bg-white/20 text-white text-xs px-4 py-1.5 rounded-full font-bold">Orange</div>
+      </div>
+      <!-- Hansraj -->
+      <div class="rounded-[2.5rem] p-8 text-center text-white bg-gradient-to-br from-blue-500 to-blue-700 shadow-xl hover:-translate-y-2 transition-transform duration-300 cursor-default">
+        <div class="text-5xl mb-4">🌊</div>
+        <h3 class="text-xl font-extrabold mb-2">Hansraj House</h3>
+        <p class="text-sm text-white/80 leading-relaxed">Knowledge, Wisdom & Depth</p>
+        <div class="mt-4 inline-block bg-white/20 text-white text-xs px-4 py-1.5 rounded-full font-bold">Blue</div>
+      </div>
+      <!-- Shraddhanand -->
+      <div class="rounded-[2.5rem] p-8 text-center text-white bg-gradient-to-br from-green-500 to-green-700 shadow-xl hover:-translate-y-2 transition-transform duration-300 cursor-default">
+        <div class="text-5xl mb-4">🌿</div>
+        <h3 class="text-xl font-extrabold mb-2">Shraddhanand House</h3>
+        <p class="text-sm text-white/80 leading-relaxed">Faith, Service & Growth</p>
+        <div class="mt-4 inline-block bg-white/20 text-white text-xs px-4 py-1.5 rounded-full font-bold">Green</div>
+      </div>
+      <!-- Virjanand -->
+      <div class="rounded-[2.5rem] p-8 text-center text-white bg-gradient-to-br from-red-500 to-red-700 shadow-xl hover:-translate-y-2 transition-transform duration-300 cursor-default">
+        <div class="text-5xl mb-4">⚔️</div>
+        <h3 class="text-xl font-extrabold mb-2">Virjanand House</h3>
+        <p class="text-sm text-white/80 leading-relaxed">Strength, Discipline & Honor</p>
+        <div class="mt-4 inline-block bg-white/20 text-white text-xs px-4 py-1.5 rounded-full font-bold">Red</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCHOOL LIFE ─── -->
+  <section class="py-20 bg-background-secondary/50 border-y border-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">School Life Pillars</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card rounded-3xl p-8 text-center hover:border-primary/30 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto text-primary mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="font-extrabold text-xl mb-2">Discipline</h3>
+          <p class="text-sm text-muted leading-relaxed">Strong values of respect, obedience, and self-regulation are woven into every aspect of campus life.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-8 text-center hover:border-primary/30 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-accent-cyan/10 flex items-center justify-center mx-auto text-accent-cyan mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-extrabold text-xl mb-2">Punctuality</h3>
+          <p class="text-sm text-muted leading-relaxed">Timely attendance and adherence to schedules build a foundation of reliability and responsibility.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-8 text-center hover:border-primary/30 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-accent-purple/10 flex items-center justify-center mx-auto text-accent-purple mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+          </div>
+          <h3 class="font-extrabold text-xl mb-2">Uniform & Etiquette</h3>
+          <p class="text-sm text-muted leading-relaxed">Proper uniform and grooming standards promote equality, identity, and pride in belonging to DAV GVM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BOOK LIST ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">Class 1 Book List (Sample)</h2>
+    <div class="glass-card rounded-[2.5rem] overflow-hidden max-w-3xl mx-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="py-4 px-6 text-left font-semibold">#</th>
+            <th class="py-4 px-6 text-left font-semibold">Subject</th>
+            <th class="py-4 px-6 text-left font-semibold">Book Title</th>
+            <th class="py-4 px-6 text-left font-semibold">Publisher</th>
+          </tr>
+        </thead>
+        <tbody class="text-muted">
+          <tr class="border-b border-border hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">1</td>
+            <td class="py-3 px-6">English</td>
+            <td class="py-3 px-6">My English Reader - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+          <tr class="border-b border-border bg-background-secondary/30 hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">2</td>
+            <td class="py-3 px-6">Hindi</td>
+            <td class="py-3 px-6">Bhasha Madhuri - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+          <tr class="border-b border-border hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">3</td>
+            <td class="py-3 px-6">Mathematics</td>
+            <td class="py-3 px-6">My Maths Time - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+          <tr class="border-b border-border bg-background-secondary/30 hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">4</td>
+            <td class="py-3 px-6">EVS</td>
+            <td class="py-3 px-6">We & Our World - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+          <tr class="border-b border-border hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">5</td>
+            <td class="py-3 px-6">G.K.</td>
+            <td class="py-3 px-6">Knowledge Train - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+          <tr class="hover:bg-surface-hover transition-colors">
+            <td class="py-3 px-6">6</td>
+            <td class="py-3 px-6">Drawing</td>
+            <td class="py-3 px-6">Art & Craft Book - 1</td>
+            <td class="py-3 px-6">DAV CMC</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

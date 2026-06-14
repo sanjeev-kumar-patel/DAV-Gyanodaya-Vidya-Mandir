@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}DAV GVM | Admissions 2025-26{% endblock %}
+
+{% block content %}
+<div class="bg-background min-h-screen pt-20">
+
+  <!-- ─── HERO ─── -->
+  <section class="relative py-24 lg:py-32 text-white overflow-hidden min-h-[450px] flex items-center bg-slate-950">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200');">
+      <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-accent-cyan font-bold text-xs">
+        <span class="w-2 h-2 bg-accent-cyan rounded-full animate-ping"></span>
+        Now Accepting Applications
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+        Admissions <span class="text-accent-cyan">2025-26</span>
+      </h1>
+      <p class="max-w-3xl mx-auto text-md sm:text-lg opacity-80 leading-relaxed">
+        Join the DAV family. Enroll your child in a nurturing environment of academic excellence and Vedic values.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── ADMISSION PROCESS ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Admission Process</h2>
+    <p class="text-center text-muted max-w-xl mx-auto mb-16">A simple, transparent 5-step process to join our institution.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300 relative">
+        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-primary/20">1</div>
+        <h3 class="font-bold text-md mb-2">Enquiry</h3>
+        <p class="text-xs text-muted leading-relaxed">Visit the school office or call for information about available classes and admission criteria.</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-primary/20">2</div>
+        <h3 class="font-bold text-md mb-2">Application</h3>
+        <p class="text-xs text-muted leading-relaxed">Fill out the application form available at the school counter along with the registration fee.</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-primary/20">3</div>
+        <h3 class="font-bold text-md mb-2">Entrance Test</h3>
+        <p class="text-xs text-muted leading-relaxed">Students appear for a grade-appropriate assessment to evaluate academic readiness.</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-primary/20">4</div>
+        <h3 class="font-bold text-md mb-2">Interview</h3>
+        <p class="text-xs text-muted leading-relaxed">An interaction with parents and the student to understand backgrounds and expectations.</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-primary/20">5</div>
+        <h3 class="font-bold text-md mb-2">Enrollment</h3>
+        <p class="text-xs text-muted leading-relaxed">Submit required documents and pay fees to confirm your child's admission.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DOCUMENTS & FEE STRUCTURE ─── -->
+  <section class="py-20 bg-background-secondary/50 border-y border-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Required Documents -->
+      <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+        <h3 class="text-2xl font-extrabold mb-8 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          Required Documents
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> Birth Certificate (Original + Photocopy)</li>
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> Transfer Certificate (TC) from Previous School</li>
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> 4 Passport-size Photographs</li>
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> Aadhar Card (Student + Parent)</li>
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> Previous Year's Report Card</li>
+          <li class="flex items-center gap-3 text-sm text-muted"><span class="w-6 h-6 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center text-xs">✓</span> Address Proof (Ration Card / Utility Bill)</li>
+        </ul>
+      </div>
+
+      <!-- Fee Structure -->
+      <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+        <h3 class="text-2xl font-extrabold mb-8 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center text-accent-purple">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          Fee Structure
+        </h3>
+        <div class="overflow-hidden rounded-2xl border border-border">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-primary/10">
+                <th class="py-3 px-4 text-left font-semibold text-foreground">Fee Category</th>
+                <th class="py-3 px-4 text-right font-semibold text-foreground">Amount</th>
+              </tr>
+            </thead>
+            <tbody class="text-muted">
+              <tr class="border-b border-border"><td class="py-3 px-4">Registration Fee</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹500</td></tr>
+              <tr class="border-b border-border bg-background-secondary/30"><td class="py-3 px-4">Tuition (Nursery — V)</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹1,200/month</td></tr>
+              <tr class="border-b border-border"><td class="py-3 px-4">Tuition (VI — X)</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹1,800/month</td></tr>
+              <tr class="border-b border-border bg-background-secondary/30"><td class="py-3 px-4">Tuition (XI — XII)</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹2,400/month</td></tr>
+              <tr class="border-b border-border"><td class="py-3 px-4">Computer Lab Fee</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹300/month</td></tr>
+              <tr><td class="py-3 px-4">Sports Fee</td><td class="py-3 px-4 text-right font-semibold text-foreground">₹200/month</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-muted mt-4 italic">* Fees are subject to revision as per DAVCMC norms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── IMPORTANT DATES ─── -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16">Important Dates</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <p class="text-2xl font-black text-primary mb-2">Feb 1</p>
+        <p class="text-sm font-semibold">Registration Opens</p>
+        <p class="text-xs text-muted mt-1">Application forms available</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-accent-purple/30 transition-all duration-300">
+        <p class="text-2xl font-black text-accent-purple mb-2">Mar 15</p>
+        <p class="text-sm font-semibold">Entrance Test</p>
+        <p class="text-xs text-muted mt-1">Written assessment day</p>
+      </div>
+      <div class="glass-card rounded-3xl p-6 text-center hover:border-primary/30 transition-all duration-300">
+        <p class="text-2xl font-black text-primary mb-2">Mar 31</p>
+        <p class="text-sm font-semibold">Registration Deadline</p>
+        <p class="text-xs text-muted mt-1">Last date to apply</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="relative overflow-hidden rounded-[3rem] p-12 md:p-20 border border-white/20 text-center glass-card">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/15 blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-purple/15 blur-[100px] pointer-events-none"></div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Ready to Enroll?</h2>
+      <p class="text-md text-muted max-w-xl mx-auto mb-8 leading-relaxed">
+        Visit our campus between 09:00 AM – 01:00 PM (Mon–Sat) or reach out to our admissions office.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn-primary px-10 py-4 text-md rounded-2xl shadow-lg hover:shadow-primary/30">Contact Admissions</a>
+        <a href="tel:+917601285623" class="bg-white/10 hover:bg-white/20 border border-white/20 px-10 py-4 text-md rounded-2xl font-semibold transition-all">Call: +91 7601-285623</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
